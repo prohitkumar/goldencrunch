@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurant Menu & Offers</title>
+  <title>Golden Crunch - Menu & Offers</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .slide {
@@ -12,31 +12,90 @@
   </style>
 </head>
 <body class="bg-gray-900 text-white overflow-hidden">
+  <!-- Slider Container -->
   <div id="slider" class="flex w-[200vw] h-screen slide">
-    <!-- Menu Section -->
-    <section class="w-screen h-screen bg-gradient-to-r from-red-500 to-red-700 flex flex-col items-center justify-center text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Menu</h1>
-      <ul class="text-xl md:text-2xl space-y-4">
-        <li>Veg Biryani - ₹150</li>
-        <li>Chicken Biryani - ₹200</li>
-        <li>Paneer Tikka - ₹180</li>
-        <li>Chicken 65 - ₹190</li>
-        <li>Lemon Soda - ₹40</li>
-      </ul>
-    </section>
 
-    <!-- Offers Section -->
-    <section class="w-screen h-screen bg-gradient-to-r from-yellow-400 to-orange-500 flex flex-col items-center justify-center text-center px-4">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">Today's Offers</h1>
-      <ul class="text-xl md:text-2xl space-y-4">
-        <li>Buy 1 Get 1 Free - Chicken Biryani</li>
-        <li>10% Off on Orders above ₹500</li>
-        <li>Free Lemon Soda with Veg Thali</li>
-        <li>Weekend Combo: Biryani + Starter at ₹299</li>
-      </ul>
-    </section>
+    <!-- Menu Section -->
+<section class="w-screen h-screen bg-gradient-to-r from-red-500 to-red-700 relative overflow-y-auto">
+  <!-- Header -->
+  <header class="sticky top-0 left-0 w-full flex items-center px-6 py-4 bg-red-600 z-10">
+    <img src="1.png" alt="Golden Crunch Logo" class="h-14 md:h-20 w-auto" />
+    <h1 class="ml-4 text-xl md:text-3xl font-bold">Golden Crunch</h1>
+  </header>
+
+  <!-- Menu Content -->
+  <div class="flex flex-col items-center justify-start h-full text-center px-4 pt-32 pb-10">
+    <h2 class="text-4xl md:text-5xl font-bold mb-10">Our Menu</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl">
+      <!-- Menu Item -->
+      <div class="bg-white text-black rounded-lg overflow-hidden shadow-md">
+        <img src="veg-biryani.jpg" alt="Veg Biryani" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Veg Biryani</h3>
+          <p class="text-lg font-bold">₹150</p>
+        </div>
+      </div>
+
+      <div class="bg-white text-black rounded-lg overflow-hidden shadow-md">
+        <img src="chicken-biryani.jpg" alt="Chicken Biryani" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Chicken Biryani</h3>
+          <p class="text-lg font-bold">₹200</p>
+        </div>
+      </div>
+
+      <div class="bg-white text-black rounded-lg overflow-hidden shadow-md">
+        <img src="paneer-tikka.jpg" alt="Paneer Tikka" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Paneer Tikka</h3>
+          <p class="text-lg font-bold">₹180</p>
+        </div>
+      </div>
+
+      <div class="bg-white text-black rounded-lg overflow-hidden shadow-md">
+        <img src="chicken-65.jpg" alt="Chicken 65" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Chicken 65</h3>
+          <p class="text-lg font-bold">₹190</p>
+        </div>
+      </div>
+
+      <div class="bg-white text-black rounded-lg overflow-hidden shadow-md">
+        <img src="lemon-soda.jpg" alt="Lemon Soda" class="w-full h-40 object-cover" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">Lemon Soda</h3>
+          <p class="text-lg font-bold">₹40</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Offers Section -->
+<section class="w-screen h-screen relative bg-black">
+  <!-- Background Image -->
+  <img src="chicken biriyani.png" alt="Offers Background" class="absolute inset-0 w-full h-full object-cover opacity-70 z-0" />
+
+  <!-- Logo + Name overlay -->
+  <header class="absolute top-0 left-0 w-full flex items-center px-6 py-4 z-10">
+    <img src="1.png" alt="Golden Crunch Logo" class="h-14 md:h-20 w-auto" />
+    <h1 class="ml-4 text-xl md:text-3xl font-bold text-white">Golden Crunch</h1>
+  </header>
+
+  <!-- Offers Content -->
+  <div class="flex flex-col items-center justify-center h-full text-center px-4 z-10 relative">
+    <h2 class="text-4xl md:text-6xl font-bold mb-6 text-white">CHICKEN BIRIRYANI</h2>
+    <ul class="text-xl md:text-2xl space-y-4 text-white font-medium">
+      <li>Rs.120/- Only</li>
+    </ul>
+  </div>
+</section>
+
   </div>
 
+  <!-- Auto Slide Script -->
   <script>
     const slider = document.getElementById("slider");
     let currentSlide = 0;
@@ -46,7 +105,7 @@
       slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
     }
 
-    setInterval(autoSlide, 5000); // Change slide every 5 seconds
+    setInterval(autoSlide, 5000); // Slide every 5 seconds
   </script>
 </body>
 </html>
